@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#boleta {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+#boleta h2 {
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.boleta-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.boleta-item-titulo {
+    flex: 2;
+    text-align: left;
+    font-weight: bold;
+}
+
+.boleta-item-cantidad,
+.boleta-item-precio {
+    flex: 1;
+    text-align: right;
+}
+
+#boleta-total {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333333;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+
+.boleta-item span {
+    flex: 1;
+}
+
+#boleta-total {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+

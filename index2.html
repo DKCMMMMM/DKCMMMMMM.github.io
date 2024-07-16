@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app2.js" async></script>
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <title>COMPRA Y RECOMPRA</title>
+</head>
+<body>
+    <header>
+        <img src="headero.jpg" alt="Logo de Compra y Recompra">
+        <h1>COMPRA Y RECOMPRA</h1>
+    </header>
+    <section class="contenedor">
+        <div class="contenedor-items">
+            <!-- Productos -->
+            <div class="item" data-stock="10">
+                <span class="titulo-item">Reloj 4 tiempos</span>
+                <img src="lanight.png" alt="" class="img-item">
+                <span class="precio-item">$15.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" data-stock="5">
+                <span class="titulo-item">Remate de reloj</span>
+                <img src="midimix.png" alt="" class="img-item">
+                <span class="precio-item">$25.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" data-stock="10">
+                <span class="titulo-item">Zapatilla-ADIDAS</span>
+                <img src="1.jpg" alt="" class="img-item">
+                <span class="precio-item">$85.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" data-stock="5">
+                <span class="titulo-item">Barbie coleccion 1960</span>
+                <img src="2.jpg" alt="" class="img-item">
+                <span class="precio-item">$25.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" data-stock="8">
+                <span class="titulo-item">Polera blanca marca agustinos</span>
+                <img src="3.jpg" alt="" class="img-item">
+                <span class="precio-item">$35.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" data-stock="12">
+                <span class="titulo-item">sofa cuero negro</span>
+                <img src="4.jpg" alt="" class="img-item">
+                <span class="precio-item">$18.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" data-stock="4">
+                <span class="titulo-item">Tostadora</span>
+                <img src="5.jpg" alt="" class="img-item">
+                <span class="precio-item">$32.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" data-stock="7">
+                <span class="titulo-item">Caja china meet master</span>
+                <img src="6.jpg" alt="" class="img-item">
+                <span class="precio-item">$18.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" data-stock="6">
+                <span class="titulo-item">Hot wheels GB</span>
+                <img src="7.jpg" alt="" class="img-item">
+                <span class="precio-item">$54.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" data-stock="9">
+                <span class="titulo-item">Lentes de sol swro</span>
+                <img src="8.jpg" alt="" class="img-item">
+                <span class="precio-item">$32.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" data-stock="3">
+                <span class="titulo-item">Radio con antena</span>
+                <img src="9.jpg" alt="" class="img-item">
+                <span class="precio-item">$42.800</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+        </div>
+            <!-- Añadir más productos según sea necesario -->
+        </div>
+        <div class="carrito" id="carrito">
+            <div class="header-carrito">
+                <h2>Tu Carrito</h2>
+            </div>
+            <div class="carrito-items">
+            </div>
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong>Tu Total</strong>
+                    <span class="carrito-precio-total">$0,00</span>
+                </div>
+                <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+        </div>
+        <!-- Contenedor para la boleta -->
+        <div id="boleta" class="boleta" style="display:none;">
+            <div class="boleta-contenido">
+                <h2>Boleta de Compra</h2>
+                <div id="boleta-items"></div>
+                <div class="boleta-total">
+                    <strong>Total a Pagar:</strong>
+                    <span id="boleta-total">$0,00</span>
+                </div>
+                <button onclick="ocultarBoleta()">Cerrar</button>
+            </div>
+        </div>
+    </section>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="logo.jpg" alt="Logo de Compra y Recompra">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Compra y Recompra es una plataforma donde puedes vender productos que ya no necesitas y encontrar cosas increíbles a buen precio.</p>
+                <p>Nuestra misión es promover la reutilización y el reciclaje de productos, ayudando a reducir el desperdicio y a ahorrar dinero.</p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="https://www.facebook.com/profile.php?id=61562533695282" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/compra_y_venta_3?igsh=MW5meTBsaWtxOWtmcg==" class="fa fa-instagram"></a>
+                    <a href="https://x.com/CompraloAhoraCL" class="fa fa-twitter"></a>
+                    <a href="https://www.youtube.com/@SHEINOFFICIAL" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>Compra y Recompra</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
